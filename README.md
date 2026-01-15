@@ -9,7 +9,7 @@ and how system calls like `write` and `exit` are implemented manually.
 
 ## How to Build and Run
 
-This project targets **32-bit Linux** and does not use libc and is tested on windows WSL.
+This project targets **32-bit Linux** and does not use libc and is tested on WSL(Ubuntu).
 
 ### Build
 
