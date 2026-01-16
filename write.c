@@ -5,7 +5,8 @@ ssize_t write(int fd, const void *buf, size_t count){
     //this is inline assembly code
     //the typical sysntax looks like asm("asm code":"output op":"input op":"clobber");
     asm volatile (
-        "int $0x80\n"//usd for system call
+        "int $0x80"
+        //usd for system call
         //interrupt 0x80 helps to jump to system callwhich happens in kernel mode 
         /*typical system call uses eax register
          to get the system call no. which represents a prticularsys call
