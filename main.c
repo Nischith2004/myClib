@@ -1,6 +1,7 @@
 typedef unsigned int size_t;
 typedef int ssize_t;
 ssize_t write(int fd, const void *buf, size_t count);
+ssize_t read(int fd, void *buf, int count);
 
 size_t strlen(const char *s) {
     size_t len = 0;
@@ -32,17 +33,13 @@ void print_int(int x){
 }
 
 int main(int argc, char **argv) {
-    const char message[] = "Hello, World!\n";
-    write(1, message, sizeof(message)-1);
-    print_str("Argc=");
-    print_int(argc);
-    print_str("\n");
-    for(int i=0;i<argc;i++){
-        print_str("argv[");
-        print_int(i);
-        print_str("]=");
-        print_str(argv[i]);
-        print_str("\n");
+    char buf[128] ;
+    size_t n;
+    print_str("enter blah blah: ");
+    n = read(0, buf, sizeof(buf));
+    if (n > 0) {
+        print_str("You typed: ");
+        write(1, buf, n);
     }
     return argc;
 }
