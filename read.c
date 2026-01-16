@@ -6,7 +6,7 @@ ssize_t read(int fd, void *buf, size_t count){
      ssize_t ret;
 
     asm volatile (
-        "int $0x80\n"
+        "int $0x80"
         : "=a"(ret)           
         : "a"(3),             // SYS_read = 4
           "b"(fd),            
