@@ -14,15 +14,17 @@ This project targets **32-bit Linux** and does not use libc and is tested on WSL
 ### Build
 
 ```bash
-gcc -m32 -nostdlib -no-pie crt0.s write.c main.c -o bare32
+gcc -m32 -nostdlib -no-pie crt0.s main.c write.c read.c -o bare32
 
 ```
-### To Run 
+
+### To Run
 
 ```bash
 ./bare32 hello world test
 ```
-### Check exit code 
+
+### Check exit code
 
 ```
 echo $?
